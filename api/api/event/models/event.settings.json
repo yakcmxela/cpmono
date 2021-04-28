@@ -1,0 +1,141 @@
+{
+  "kind": "collectionType",
+  "collectionName": "events",
+  "info": {
+    "name": "Event",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "subtitle": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "location.address",
+      "required": false
+    },
+    "urlExternal": {
+      "type": "string"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "review",
+        "rejected",
+        "verified"
+      ],
+      "default": "review"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "pricing": {
+      "type": "component",
+      "repeatable": false,
+      "component": "event.prices"
+    },
+    "windowSale": {
+      "type": "component",
+      "repeatable": false,
+      "component": "dates.window"
+    },
+    "windowEvent": {
+      "type": "component",
+      "repeatable": true,
+      "component": "dates.window"
+    },
+    "indoor": {
+      "type": "boolean"
+    },
+    "outdoor": {
+      "type": "boolean"
+    },
+    "virtual": {
+      "type": "boolean"
+    },
+    "petsAllowed": {
+      "type": "boolean"
+    },
+    "familyFriendly": {
+      "type": "boolean"
+    },
+    "minAge": {
+      "type": "integer"
+    },
+    "guestLimit": {
+      "type": "integer"
+    },
+    "guestCount": {
+      "type": "integer"
+    },
+    "artistPrimary": {
+      "via": "eventsPrimary",
+      "collection": "artist",
+      "dominant": true
+    },
+    "artistsSupporting": {
+      "via": "eventsSupporting",
+      "collection": "artist",
+      "dominant": true
+    },
+    "augmentedReality": {
+      "collection": "augmented-reality",
+      "via": "events",
+      "dominant": true
+    },
+    "organizations": {
+      "via": "events",
+      "collection": "organization",
+      "dominant": true
+    },
+    "submittedBy": {
+      "plugin": "users-permissions",
+      "model": "user"
+    },
+    "venues": {
+      "collection": "venue"
+    }
+  }
+}

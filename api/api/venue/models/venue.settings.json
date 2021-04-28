@@ -1,0 +1,80 @@
+{
+  "kind": "collectionType",
+  "collectionName": "venues",
+  "info": {
+    "name": "Venue",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    },
+    "urlExternal": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "hoursOfOperation": {
+      "type": "component",
+      "repeatable": false,
+      "component": "dates.hours-of-operation"
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "location.address"
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "events": {
+      "collection": "event"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "active"
+      ],
+      "default": "pending",
+      "private": true
+    },
+    "users": {
+      "via": "venues",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    }
+  }
+}

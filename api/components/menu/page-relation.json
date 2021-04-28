@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_menu_page_relations",
+  "info": {
+    "name": "Page Relation",
+    "icon": "arrows-alt-h",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Page": {
+      "model": "page"
+    },
+    "Title": {
+      "type": "string"
+    }
+  }
+}

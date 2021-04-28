@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_website_featured_events",
+  "info": {
+    "name": "Featured Events",
+    "icon": "highlighter",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "events": {
+      "collection": "event"
+    },
+    "buttonLinkTo": {
+      "model": "page"
+    },
+    "markupId": {
+      "type": "string"
+    },
+    "buttonLinkText": {
+      "type": "string"
+    }
+  }
+}

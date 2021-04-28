@@ -1,0 +1,25 @@
+{
+  "collectionName": "components_dates_hours_of_operations",
+  "info": {
+    "name": "Hours of Operation",
+    "icon": "clock",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "day": {
+      "type": "string",
+      "required": true
+    },
+    "closed": {
+      "type": "boolean",
+      "default": false
+    },
+    "open": {
+      "type": "time"
+    },
+    "close": {
+      "type": "time"
+    }
+  }
+}

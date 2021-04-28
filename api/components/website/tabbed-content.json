@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_website_tabbed_contents",
+  "info": {
+    "name": "Tabbed Content",
+    "icon": "bezier-curve",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "markupId": {
+      "type": "string"
+    },
+    "tabItem": {
+      "type": "component",
+      "repeatable": true,
+      "component": "website.tabbed-content-child"
+    }
+  }
+}

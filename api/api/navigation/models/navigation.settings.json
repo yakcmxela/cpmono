@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "navigations",
+  "info": {
+    "name": "Navigation",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "menus": {
+      "collection": "menu"
+    },
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Internal",
+        "External",
+        "Social"
+      ]
+    },
+    "page": {
+      "model": "page"
+    },
+    "externalUrl": {
+      "type": "string"
+    }
+  }
+}

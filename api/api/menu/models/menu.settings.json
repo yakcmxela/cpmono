@@ -1,0 +1,43 @@
+{
+  "kind": "collectionType",
+  "collectionName": "menus",
+  "info": {
+    "name": "Menu",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "classes": {
+      "type": "string"
+    },
+    "items": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-item"
+    },
+    "page": {
+      "model": "page"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Internal",
+        "External",
+        "Social",
+        "Menu"
+      ],
+      "default": "Internal"
+    },
+    "externalUrl": {
+      "type": "string"
+    }
+  }
+}

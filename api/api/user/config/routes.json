@@ -1,0 +1,28 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/user/getUserSelf/:id",
+      "handler": "User.getUserSelf",
+      "config": {
+        "policies": ["plugins::users-permissions.isAuthenticated", "isOwner"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user/updateUserSelf/:id",
+      "handler": "User.updateUserSelf",
+      "config": {
+        "policies": ["plugins::users-permissions.isAuthenticated", "isOwner"]
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/user/updateUserRelations/:id",
+      "handler": "User.updateUserRelations",
+      "config": {
+        "policies": ["plugins::users-permissions.isAuthenticated", "isOwner"]
+      }
+    }
+  ]
+}

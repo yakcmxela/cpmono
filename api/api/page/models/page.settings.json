@@ -1,0 +1,39 @@
+{
+  "kind": "collectionType",
+  "collectionName": "page",
+  "info": {
+    "name": "Page",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string",
+      "required": false,
+      "unique": true
+    },
+    "isHomePage": {
+      "type": "boolean",
+      "default": false,
+      "required": true,
+      "unique": false
+    },
+    "components": {
+      "type": "dynamiczone",
+      "components": [
+        "website.featured-artists",
+        "website.featured-events",
+        "website.tabbed-content",
+        "website.image-with-text",
+        "website.tabbed-content-child"
+      ]
+    }
+  }
+}

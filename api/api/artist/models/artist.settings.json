@@ -1,0 +1,76 @@
+{
+  "kind": "collectionType",
+  "collectionName": "artists",
+  "info": {
+    "name": "Artists & Performers",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "firstname": {
+      "type": "string"
+    },
+    "lastname": {
+      "type": "string"
+    },
+    "urlExternal": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "richtext"
+    },
+    "images": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "featuredImage": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "eventsPrimary": {
+      "collection": "event",
+      "via": "artistPrimary"
+    },
+    "eventsSupporting": {
+      "collection": "event",
+      "via": "artistsSupporting"
+    },
+    "categories": {
+      "collection": "category"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "active"
+      ],
+      "default": "pending",
+      "private": true,
+      "required": true
+    },
+    "phone": {
+      "type": "string"
+    },
+    "email": {
+      "type": "email"
+    }
+  }
+}

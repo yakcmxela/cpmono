@@ -1,0 +1,26 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tours",
+  "info": {
+    "name": "Tours",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "locations": {
+      "type": "component",
+      "repeatable": true,
+      "component": "location.address"
+    },
+    "title": {
+      "type": "string"
+    },
+    "slug": {
+      "type": "string"
+    }
+  }
+}

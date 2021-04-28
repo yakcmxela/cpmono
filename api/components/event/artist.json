@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_event_artists",
+  "info": {
+    "name": "Artist",
+    "icon": "music"
+  },
+  "options": {},
+  "attributes": {
+    "artists": {
+      "collection": "artist"
+    }
+  }
+}

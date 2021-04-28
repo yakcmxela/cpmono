@@ -1,0 +1,32 @@
+{
+  "kind": "collectionType",
+  "collectionName": "augmented_realities",
+  "info": {
+    "name": "Augmented Reality"
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "APK": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    },
+    "title": {
+      "type": "string"
+    },
+    "events": {
+      "via": "augmentedReality",
+      "collection": "event"
+    }
+  }
+}

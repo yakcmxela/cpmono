@@ -1,0 +1,14 @@
+{
+  "collectionName": "components_location_geolocations",
+  "info": {
+    "name": "venue",
+    "icon": "building",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "venues": {
+      "collection": "venue"
+    }
+  }
+}

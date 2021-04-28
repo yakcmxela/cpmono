@@ -1,0 +1,37 @@
+{
+  "collectionName": "components_settings_menus",
+  "info": {
+    "name": "Parent Menu Item",
+    "icon": "bars",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "default": "Internal",
+      "enum": [
+        "Internal",
+        "External",
+        "Social"
+      ]
+    },
+    "page": {
+      "model": "page"
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "class": {
+      "type": "string"
+    },
+    "submenu": {
+      "type": "component",
+      "repeatable": true,
+      "component": "menu.menu-item"
+    }
+  }
+}

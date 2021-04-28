@@ -1,0 +1,52 @@
+{
+  "routes": [
+    {
+      "method": "GET",
+      "path": "/augmented-realities",
+      "handler": "augmented-reality.find",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/augmented-realities/count",
+      "handler": "augmented-reality.count",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/augmented-realities/:id",
+      "handler": "augmented-reality.findOne",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/augmented-realities",
+      "handler": "augmented-reality.create",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "PUT",
+      "path": "/augmented-realities/:id",
+      "handler": "augmented-reality.update",
+      "config": {
+        "policies": []
+      }
+    },
+    {
+      "method": "DELETE",
+      "path": "/augmented-realities/:id",
+      "handler": "augmented-reality.delete",
+      "config": {
+        "policies": []
+      }
+    }
+  ]
+}

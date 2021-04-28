@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_settings_menu_items",
+  "info": {
+    "name": "Child Menu Item",
+    "icon": "equals",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Internal",
+        "External",
+        "Social",
+        "Menu"
+      ],
+      "default": "Internal"
+    },
+    "page": {
+      "model": "page"
+    },
+    "externalUrl": {
+      "type": "string"
+    },
+    "class": {
+      "type": "string"
+    },
+    "menu": {
+      "model": "menu"
+    }
+  }
+}

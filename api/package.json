@@ -1,0 +1,40 @@
+{
+  "name": "cportland",
+  "private": true,
+  "version": "0.1.0",
+  "description": "A Strapi application",
+  "scripts": {
+    "develop": "strapi develop",
+    "start": "strapi start",
+    "build": "strapi build",
+    "strapi": "strapi"
+  },
+  "dependencies": {
+    "@mapbox/mapbox-sdk": "^0.12.1",
+    "knex": "<0.20.1",
+    "pg": "^8.5.1",
+    "slugify": "^1.4.7",
+    "strapi": "3.4.5",
+    "strapi-admin": "3.4.5",
+    "strapi-connector-bookshelf": "3.4.5",
+    "strapi-plugin-content-manager": "3.4.5",
+    "strapi-plugin-content-type-builder": "3.4.5",
+    "strapi-plugin-email": "3.4.5",
+    "strapi-plugin-graphql": "3.4.5",
+    "strapi-plugin-upload": "^3.4.5",
+    "strapi-plugin-users-permissions": "3.4.5",
+    "strapi-provider-upload-aws-s3": "^3.4.6",
+    "strapi-utils": "3.4.5"
+  },
+  "author": {
+    "name": "A Strapi developer"
+  },
+  "strapi": {
+    "uuid": "de9300fd-3c0c-4fda-9deb-99e5230d0011"
+  },
+  "engines": {
+    "node": ">=12.16.0 <=14.x.x",
+    "npm": ">=6.0.0"
+  },
+  "license": "MIT"
+}

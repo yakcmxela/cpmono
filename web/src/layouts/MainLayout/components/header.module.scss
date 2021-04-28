@@ -1,0 +1,22 @@
+.header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 99999;
+  background-color: #fff;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  padding: 0 24px;
+  box-shadow: 0px 6px 6px rgba(0, 0, 0, 0.1);
+}
+
+.nav {
+  display: flex;
+  padding: 0;
+  list-style: none;
+  li {
+    margin-right: 12px;
+  }
+}

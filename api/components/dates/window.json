@@ -1,0 +1,16 @@
+{
+  "collectionName": "components_dates_windows",
+  "info": {
+    "name": "Window",
+    "icon": "calendar-check"
+  },
+  "options": {},
+  "attributes": {
+    "start": {
+      "type": "datetime"
+    },
+    "end": {
+      "type": "datetime"
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_website_newsletter_signups",
+  "info": {
+    "name": "Newsletter Signup",
+    "icon": "mail-bulk"
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "script": {
+      "type": "string"
+    },
+    "markupId": {
+      "type": "string"
+    }
+  }
+}

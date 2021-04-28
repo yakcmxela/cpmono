@@ -1,0 +1,28 @@
+{
+  "collectionName": "components_social_social_links",
+  "info": {
+    "name": "Social Link",
+    "icon": "share-alt-square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "icon": {
+      "type": "string"
+    },
+    "url": {
+      "type": "string"
+    },
+    "image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images",
+        "files",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": false
+    }
+  }
+}

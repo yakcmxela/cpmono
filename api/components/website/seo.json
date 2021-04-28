@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_website_seos",
+  "info": {
+    "name": "SEO",
+    "icon": "ad"
+  },
+  "options": {},
+  "attributes": {
+    "Title": {
+      "type": "string"
+    },
+    "Slug": {
+      "type": "string"
+    },
+    "Meta": {
+      "type": "string"
+    }
+  }
+}

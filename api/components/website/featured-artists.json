@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_website_featured_artists",
+  "info": {
+    "name": "Featured Artists",
+    "icon": "paint-brush",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "content": {
+      "type": "richtext"
+    },
+    "artists": {
+      "collection": "artist"
+    }
+  }
+}

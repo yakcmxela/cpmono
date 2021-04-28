@@ -1,0 +1,74 @@
+{
+  "kind": "collectionType",
+  "collectionName": "organizations",
+  "info": {
+    "name": "Organization",
+    "description": ""
+  },
+  "options": {
+    "increments": true,
+    "timestamps": true,
+    "draftAndPublish": true
+  },
+  "attributes": {
+    "name": {
+      "type": "string"
+    },
+    "events": {
+      "collection": "event",
+      "via": "organizations"
+    },
+    "type": {
+      "type": "enumeration",
+      "enum": [
+        "Education",
+        "Festivals",
+        "Initiatives",
+        "Studio",
+        "Incubator",
+        "Supplies",
+        "Bookstore",
+        "Library",
+        "Workspace",
+        "Gallery",
+        "Film",
+        "Performance",
+        "Print"
+      ]
+    },
+    "email": {
+      "type": "string"
+    },
+    "phone": {
+      "type": "string"
+    },
+    "urlExternal": {
+      "type": "string"
+    },
+    "description": {
+      "type": "richtext"
+    },
+    "status": {
+      "type": "enumeration",
+      "enum": [
+        "pending",
+        "active"
+      ],
+      "default": "pending",
+      "private": true,
+      "required": true
+    },
+    "location": {
+      "type": "component",
+      "repeatable": false,
+      "component": "location.address",
+      "max": 1
+    },
+    "users": {
+      "via": "organizations",
+      "plugin": "users-permissions",
+      "collection": "user",
+      "dominant": true
+    }
+  }
+}
