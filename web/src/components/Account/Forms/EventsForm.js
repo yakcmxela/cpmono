@@ -1,9 +1,13 @@
 import {
-  DynamicForm,
-  GeocodeWithForm,
-  useGeocodeWithForm,
-} from "components/Forms";
+  AddressFieldGroup,
+  DynamicFields,
+  GeocodeResults,
+  UploadField,
+  useGeocodeResults,
+} from "components/FormFields";
 import { validateEmail, validateURL } from "helpers";
+
+import { Button, Form } from "antd";
 
 const devDefault = {
   title: "test",
@@ -21,20 +25,23 @@ export const EventsForm = ({ fields = {}, newEvent = {}, onSubmit }) => {
     onConfirmGeocode,
     onSubmitGeocode,
     submission,
-  } = useGeocodeWithForm(onSubmit);
+  } = useGeocodeResults(onSubmit);
 
   return (
     <>
-      <GeocodeWithForm
+      <GeocodeResults
         callback={onConfirmGeocode}
         geocoding={geocoding}
         submission={submission}
       />
-      <DynamicForm
-        fields={fields}
-        onSubmit={onSubmitGeocode}
-        data={devDefault}
-      />
+      <Form onFinish={onSubmitGeocode} initialValues={devDefault}>
+        <DynamicFields fields={fields} />
+        <AddressFieldGroup />
+        <UploadField field={featuredImage} />
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form>
     </>
   );
 };
@@ -72,4 +79,10 @@ const defaultEvent = {
     start: initLocalTime(),
     end: initLocalTime(),
   },
+};
+
+const featuredImage = {
+  key: "featuredImage",
+  label: "Featured Image",
+  accept: "image/png, image/jpeg",
 };

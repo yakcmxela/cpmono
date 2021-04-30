@@ -5,7 +5,9 @@ export const CREATE_ARTIST = gql`
     # $categories: [String]
     $bio: String
     $email: String
+    $featuredImage: [ID]
     $firstname: String
+    $galleryImages: [ID]
     $lastname: String
     $phone: String
     $urlExternal: String
@@ -16,7 +18,9 @@ export const CREATE_ARTIST = gql`
           # categories: $categories
           bio: $bio
           email: $email
+          featuredImage: $featuredImage
           firstname: $firstname
+          galleryImages: $galleryImages
           lastname: $lastname
           phone: $phone
           urlExternal: $urlExternal
@@ -35,24 +39,27 @@ export const CREATE_ARTIST = gql`
 
 export const UPDATE_ARTIST = gql`
   mutation UpdateArtist(
-    $id: ID!
-    $categories: [String]
     $bio: String
+    $categories: [String]
     $email: String
+    $featuredImage: [ID]
     $firstname: String
+    $galleryImages: [ID]
     $id: ID!
     $lastname: String
     $phone: String
     $urlExternal: String
-  ){
+  ) {
     updateArtist(
       input: {
-        id: $id,
+        id: $id
         data: {
           categories: $categories
           bio: $description
           email: $email
+          featuredImage: $featuredImage
           firstname: $firstname
+          galleryImages: $galleryImages
           lastname: $lastname
           location: $location
           phone: $phone

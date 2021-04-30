@@ -16,7 +16,11 @@ module.exports = {
         types: ["place", "address", "poi", "poi.landmark"],
       })
       .send()
-      .then(({ body }) => body.features);
+      .then(({ body }) => {
+        body.features.forEach((feat) => console.log(feat.context));
+        // console.log(body);
+        return body.features;
+      });
   },
   reverseGeocode: async (coords) => {},
 };

@@ -1,31 +1,7 @@
-import { Form, Button, Input, InputNumber, Select, Upload } from "antd";
-import { PlusOutlined } from "@ant-design/icons";
+import { Form, Input, InputNumber, Select } from "antd";
 import { capitalize } from "helpers";
-import { UPLOAD_FILE } from "schema/mutations";
-import { useMutation } from "@apollo/client";
 
-export const DynamicForm = ({
-  data,
-  fields,
-  onSubmit,
-  submitText = "Submit",
-}) => {
-  const [uploadMutation] = useMutation(UPLOAD_FILE);
-  const onUpload = ({ file, onError, onSuccess }) =>
-    uploadMutation({
-      variables: {
-        file,
-      },
-    })
-      .then(onSuccess)
-      .catch(onError);
-
-  const formatValues = ({ file, fileList }) => {
-    if (file.status === "done") {
-      return fileList.map((file) => file.response.data.upload.id)[0];
-    }
-  };
-
+export const DynamicFields = ({ fields }) => {
   const getProps = (field, key, parent) => {
     const { fileList, hidden, required, rules } = field;
 
@@ -98,31 +74,8 @@ export const DynamicForm = ({
             </Select>
           </Form.Item>
         );
-      case "upload":
-        const { accept, listType, showUploadList } = field;
-        const uploadProps = {
-          ...(accept && { accept }),
-          ...(listType && { listType }),
-          ...(showUploadList && { showUploadList }),
-        };
-        return (
-          <Form.Item {...getProps(field, key)}>
-            <Upload {...uploadProps} customRequest={onUpload}>
-              <div>
-                <PlusOutlined /> <div style={{ marginTop: 8 }}>Upload</div>
-              </div>
-            </Upload>
-          </Form.Item>
-        );
     }
   };
 
-  return (
-    <Form onFinish={onSubmit} initialValues={data}>
-      {mapFields(fields)}
-      <Button type="primary" htmlType="submit">
-        {submitText}
-      </Button>
-    </Form>
-  );
+  return mapFields(fields);
 };

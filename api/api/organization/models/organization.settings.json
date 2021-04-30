@@ -58,16 +58,16 @@
       "private": true,
       "required": true
     },
-    "location": {
+    "address": {
       "type": "component",
       "repeatable": false,
       "component": "location.address",
       "max": 1
     },
     "users": {
-      "via": "organizations",
       "plugin": "users-permissions",
       "collection": "user",
+      "via": "organizations",
       "dominant": true
     }
   }

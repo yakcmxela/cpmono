@@ -1,5 +1,6 @@
 import { useState } from "react";
-export const useGeocodeWithForm = (callback) => {
+
+export const useGeocodeResults = (callback) => {
   const [geocoding, setGeocoding] = useState(false);
   const [submission, setSubmission] = useState({});
 
@@ -9,10 +10,18 @@ export const useGeocodeWithForm = (callback) => {
   };
 
   const onConfirmGeocode = (location) => {
+    console.log({
+      ...submission,
+      address: {
+        ...submission.address,
+        longitude: location.center[0],
+        latitude: location.center[1],
+      },
+    })
     callback({
       ...submission,
-      location: {
-        address: location.place_name,
+      address: {
+        ...submission.address,
         longitude: location.center[0],
         latitude: location.center[1],
       },

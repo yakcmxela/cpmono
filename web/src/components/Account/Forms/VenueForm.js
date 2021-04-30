@@ -1,9 +1,13 @@
 import {
-  DynamicForm,
-  GeocodeWithForm,
-  useGeocodeWithForm,
-} from "components/Forms";
+  AddressFieldGroup,
+  DynamicFields,
+  GeocodeResults,
+  UploadField,
+  useGeocodeResults,
+} from "components/FormFields";
 import { validateEmail, validateURL } from "helpers";
+
+import { Button, Form } from "antd";
 
 export const VenueForm = ({ venue = {}, onSubmit }) => {
   const {
@@ -11,15 +15,22 @@ export const VenueForm = ({ venue = {}, onSubmit }) => {
     onConfirmGeocode,
     onSubmitGeocode,
     submission,
-  } = useGeocodeWithForm(onSubmit);
+  } = useGeocodeResults(onSubmit);
   return (
     <>
-      <GeocodeWithForm
+      <GeocodeResults
         callback={onConfirmGeocode}
         geocoding={geocoding}
         submission={submission}
       />
-      <DynamicForm fields={fields} onSubmit={onSubmitGeocode} data={venue} />
+      <Form onFinish={onSubmitGeocode} initialValues={venue}>
+        <DynamicFields fields={fields} />
+        <AddressFieldGroup />
+        <UploadField field={featuredImage} />
+        <Button type="primary" htmlType="submit">
+          Submit
+        </Button>
+      </Form>{" "}
     </>
   );
 };
@@ -47,25 +58,15 @@ const fields = {
     rules: [{ required: true, message: "Please supply a valid phone number" }],
     type: "text",
   },
-  location: {
-    fields: {
-      address: {
-        rules: [{ required: true, message: "Please supply an address" }],
-        type: "text",
-      },
-      latitude: {
-        hidden: true,
-        type: "text",
-      },
-      longitude: {
-        hidden: true,
-        type: "text",
-      },
-    },
-  },
   urlExternal: {
     label: "Website",
     rules: [{ validator: validateURL, message: "Please supply a valid URL" }],
     type: "text",
   },
+};
+
+const featuredImage = {
+  key: "featuredImage",
+  label: "Featured Image",
+  accept: "image/png, image/jpeg",
 };

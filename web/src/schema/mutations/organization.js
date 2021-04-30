@@ -4,7 +4,7 @@ export const CREATE_ORGANIZATION = gql`
   mutation CreateOrganization(
     $description: String
     $email: String
-    $location: ComponentLocationAddressInput
+    $address: ComponentLocationAddressInput
     $name: String
     $phone: String
     $urlExternal: String
@@ -14,7 +14,7 @@ export const CREATE_ORGANIZATION = gql`
         data: {
           description: $description
           email: $email
-          location: $location
+          address: $address
           name: $name
           phone: $phone
           urlExternal: $urlExternal

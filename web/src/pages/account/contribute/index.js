@@ -42,7 +42,6 @@ const AccountContribute = ({ route }) => {
           : registeringAs === REGISTRATION_TYPES.VENUE
           ? createVenue
           : null;
-      console.log(data);
       await mutation({
         variables: {
           ...data,

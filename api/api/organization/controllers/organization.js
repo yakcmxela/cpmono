@@ -9,10 +9,8 @@ module.exports = {
   create: async (context) => {
     try {
       const submittedBy = context.state.user;
-      if (
-        submittedBy.role.type === "authenticated" &&
-        submittedBy.organization === null
-      ) {
+      console.log(submittedBy);
+      if (submittedBy.organization === null) {
         const organization = await strapi.query("organization").create({
           ...context.request.body,
           published_at: null,

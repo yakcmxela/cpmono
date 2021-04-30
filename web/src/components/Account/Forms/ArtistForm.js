@@ -1,7 +1,16 @@
-import { DynamicForm } from "components/Forms/DynamicForm";
+import { DynamicFields, UploadField } from "components/FormFields";
+
+import { Button, Form } from "antd";
 
 export const ArtistForm = ({ artist = {}, onSubmit }) => (
-  <DynamicForm fields={fields} onSubmit={onSubmit} data={artist} />
+  <Form onFinish={onSubmit} initialValues={artist}>
+    <DynamicFields fields={fields} />
+    <UploadField field={featuredImage} />
+    <UploadField field={galleryImages} />
+    <Button type="primary" htmlType="submit">
+      Submit
+    </Button>
+  </Form>
 );
 
 const types = [
@@ -42,4 +51,17 @@ const fields = {
     required: true,
     type: "textarea",
   },
+};
+
+const galleryImages = {
+  accept: "image/png, image/jpeg",
+  key: "galleryImages",
+  label: "Gallery Images",
+  showUploadList: true,
+};
+
+const featuredImage = {
+  key: "featuredImage",
+  label: "Featured Image",
+  accept: "image/png, image/jpeg",
 };

@@ -3,7 +3,7 @@ import { useLazyQuery } from "@apollo/client";
 import { Modal, Radio } from "antd";
 import { useEffect, useState } from "react";
 
-export const GeocodeWithForm = ({
+export const GeocodeResults = ({
   geocoding = false,
   submission = {},
   callback,
@@ -35,9 +35,12 @@ export const GeocodeWithForm = ({
 
   const onShouldGeocode = () => {
     if (geocoding) {
+      const address = Object.keys(submission.address)
+        .map((part) => submission.address[part])
+        .join(" ");
       geocodeRequest({
         variables: {
-          address: submission.location.address,
+          address,
         },
       });
     }

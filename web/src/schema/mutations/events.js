@@ -5,7 +5,7 @@ export const CREATE_EVENT = gql`
     $description: String
     $email: String
     $featuredImage: ID
-    $location: ComponentLocationAddressInput!
+    $address: ComponentLocationAddressInput!
     $phone: String
     $subtitle: String
     $submittedBy: ID!
@@ -18,7 +18,7 @@ export const CREATE_EVENT = gql`
           description: $description
           email: $email
           featuredImage: $featuredImage
-          location: $location
+          address: $address
           phone: $phone
           subtitle: $subtitle
           submittedBy: $submittedBy
